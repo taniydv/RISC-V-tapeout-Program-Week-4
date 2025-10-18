@@ -104,4 +104,5 @@ Saturation current is given as :
 <img width="1604" height="774" alt="Screenshot 2025-10-17 222205" src="https://github.com/user-attachments/assets/60004206-3d82-44cf-beaf-6beecf4e30e5" />
 <img width="1168" height="842" alt="Screenshot 2025-10-17 222333" src="https://github.com/user-attachments/assets/fd439eba-edae-4008-a801-2dc0f5a58597" />
 <img width="1711" height="1005" alt="Screenshot 2025-10-17 222430" src="https://github.com/user-attachments/assets/7a6db1dc-49bb-49c4-8aff-5b9b3ff93e34" />
+<img width="421" height="248" alt="Screenshot 2025-10-17 222452" src="https://github.com/user-attachments/assets/588d40c8-5912-4cf3-9384-99e395093523" />
 
