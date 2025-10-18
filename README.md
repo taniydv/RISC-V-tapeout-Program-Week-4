@@ -29,7 +29,7 @@ SPICE have predfefined models which are need to be correctly defined for the par
 
                * Cutoff region: The cutoff region is the “OFF” state of an NMOS transistor — no current flows from drain to source because the channel has not yet formed. Here Vgs-Vt<0).
 
-       <img width="788" height="693" alt="Screenshot 2025-10-17 073959" src="https://github.com/user-attachments/assets/53eb7496-2cdb-49ba-bbc5-6edd4c4c6982" />
+<img width="788" height="693" alt="Screenshot 2025-10-17 073959" src="https://github.com/user-attachments/assets/53eb7496-2cdb-49ba-bbc5-6edd4c4c6982" />
 
 
     - Threshold Voltage: The threshold voltage (Vₜ) is the minimum gate-to-source voltage at which a MOSFET begins to conduct or it can be defined as the voltage required to invert the channel.
@@ -38,7 +38,7 @@ SPICE have predfefined models which are need to be correctly defined for the par
 
                * Case 2: Apply positive Vgs voltage. This causes the oxide to acts as a dielectric and form capacitor. Mobile holes under the gate get repellled by the positive charge at G and leave behind the negative charge. It leads to accumulation of negative charge under the gate.
  
-  <img width="1230" height="713" alt="Screenshot 2025-10-17 074822" src="https://github.com/user-attachments/assets/e24702f9-92a6-45d1-853a-a572f497a1eb" />
+<img width="1230" height="713" alt="Screenshot 2025-10-17 074822" src="https://github.com/user-attachments/assets/e24702f9-92a6-45d1-853a-a572f497a1eb" />
 
 
                * Case 3: Increase the Gate voltage Vgs. Now more number of charges get repelled and the depletion width increases. Now it leads to the inversion at the semiconductor surface to n-type.This phenomena is called strong inversion. The Vgs voltage at which strong inversion occur is called thresold voltage (Vt).
@@ -106,3 +106,85 @@ Saturation current is given as :
 <img width="1711" height="1005" alt="Screenshot 2025-10-17 222430" src="https://github.com/user-attachments/assets/7a6db1dc-49bb-49c4-8aff-5b9b3ff93e34" />
 <img width="421" height="248" alt="Screenshot 2025-10-17 222452" src="https://github.com/user-attachments/assets/588d40c8-5912-4cf3-9384-99e395093523" />
 
+### DAY 2
+Day 2 deals with the velocity saturation effect and the basics of CMOS Voltage transfer characteristics. For device at lower nodes there are four modes of operations i.e cutoff region, linear region, velocity saturation region and Saturation region.
+
+Velocity Saturation effect is a short channel effect. This occurs at a very high electric field where the velocity becomes constant due to the scattering effects. General Drain current equation which is valid for all modes other than cutoff as in cutoff region, Id=0 and Vgs<0.
+
+- If Vgs is minimum
+- If Vds is minimum
+- If Vdsat is minimum
+
+Peak current is different for lower node. This happerns because of the velocity saturation which causes the device to saturate early.
+
+* CMOS Voltage Transfer Characteristics: The Voltage Transfer Characteristic (VTC) shows how the output voltage (Vout) of a circuit changes in response to its input voltage (Vin). Transistors act as a switch in digital circuits and amplifiers in an analog circuits. 
+
+Given below is the Equivalent model of switch of both NMOS and PMOS transistor.
+
+Load curve for PMOS and NMOS are:
+
+
+These load curvers are superimposed to get the VTC curve.
+
+
+### DAY 3
+Day 3 deals with the CMOS Switching threshold and the dynamic simulations. 
+
+The rise delay is the time it takes for the output to rise from a logic LOW (0) to a logic HIGH (1) after the input changes from HIGH to LOW.
+
+The fall delay is the time it takes for the output to fall from a logic HIGH (1) to a logic LOW (0) after the input changes from LOW to HIGH.
+
+CMOS is a Robust device where the robust parameters involve Switching threshold, noise margin, device variation, power supply scaling etc. CMOS is robust because it combines low power, high noise immunity, stable operation, scalability, and reliability — all crucial for modern integrated circuits.
+
+- Switching Threshold (Vm): Switching threshold is the point where Vin=Vout. Here both the PMOS and NMOS are in saturation region. We determine Vm by drwaing a line at tan45.  Switching threshold for the above VTC curve is given below:
+
+Analytical Expression of Vm as a function of (W/L)p & (W/L)n is look like:
+
+
+Generally PMOS size is integral multiple of NMOS (W/L) in order to equate their resistance. If any imperfection happens during fabrication then also CMOS inverter behaves like it ouw property.  These characteriscs are used in clock inverters and buffers. Whereas other variations of PMOS and NMOS are used as regular inverter or buffer which are mostly preffered for datapath.
+
+
+### Day 4
+Continuing to the CMOS inverter robustness second parameter is the Noise Margin. Noise margin is the maximum noise voltage that can be added to a logic signal without changing its correct logical state.
+
+Input-Output characterictics of Ideal and practical inverter is shown below:
+
+
+Noise margin is calculated as:
+- NMh (Noise Margin High)- Any voltage level in NMh range will be detected as logic 1.
+  
+                         NMh= Voh-Vih
+  
+  where Voh (Output high Voltage): Any output voltage between Voh and vdd is treated as logic 1.
+
+  Vih (Input high voltage): Any input voltage between Vih and vdd is treated as logic 1.
+  
+- NMl (Noise Margin Low)- Any voltage level in NMl range will be detected as logic 0.
+  
+                         NMl=Vil-Vol
+
+   where Vol (Output low Voltage): Any output voltage between 0 and Vol is treated as logic 0.
+
+  Vil (Input low voltage): Any input voltage between 0 and Vil is treated as logic 0.
+
+Different Noise margin w.r.t to PMOS width is shown as:
+
+This depicts that the device is robust even when there is fabrication imperfection happens.
+
+Given below shows the noise marf=gin of the given graph:
+
+
+### Day 5
+Day 5 deals with the power supply and the device variation robustness.
+
+- Power supply is varied from oV to 1.8V with the step of 0.2V. Here gain is calculated which is high for the lower node i.e approximately 50% greater.
+
+
+- Device variation: Device variation occur because of the different reasons like etching process which changes the (W/L) ratio, oxide thickness which vary during the oxidation process etc.
+
+Given below is the experiment of strong PMOS i.e least resistsnt and wider in size than the NMOS and the weak NMOS which having high resistance. The graph shown below depicts the large holding of output for long duration which depicts that the CMOS is robust.
+
+
+  ### Acknowledgement
+
+  I'm very grateful to VSD team for this learning tapeout chip program of RISC-V
