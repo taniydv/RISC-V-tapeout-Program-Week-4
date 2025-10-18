@@ -27,7 +27,7 @@ SPICE have predfefined models which are need to be correctly defined for the par
 
                * NMOS works in three regions: Cutoff, Resistive or linear, Saturation
 
-               * Cutoff region: The cutoff region is the “OFF” state of an NMOS transistor — no current flows from drain to source because the channel has not yet formed. Here Vgs<Vt).
+               * Cutoff region: The cutoff region is the “OFF” state of an NMOS transistor — no current flows from drain to source because the channel has not yet formed. Here Vgs-Vt<0).
 
        <img width="788" height="693" alt="Screenshot 2025-10-17 073959" src="https://github.com/user-attachments/assets/53eb7496-2cdb-49ba-bbc5-6edd4c4c6982" />
 
